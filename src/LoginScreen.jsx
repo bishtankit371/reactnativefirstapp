@@ -1,14 +1,14 @@
-import {View, Text, SafeAreaView,Image, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
+import {View, Text, SafeAreaView,Image, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Input from '../components/Input';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-
-
-const {width, height} = Dimensions.get('window');
+import {useWindowDimensions} from 'react-native';
 
 
 const LoginScreen = ({navigation}) => {
+
+  const {height, width} = useWindowDimensions();
 
 const styles = StyleSheet.create({
   image: {
@@ -48,7 +48,7 @@ text: {
 },
 button: {
    alignItems: 'center',
-    borderRadius: width,
+    borderRadius: 40,
    justifyContent: 'center',
    paddingHorizontal: 30,
     paddingVertical: 14,
@@ -60,7 +60,7 @@ button: {
    justifyContent: 'center',
    paddingVertical: 14,
    paddingHorizontal: 30,
-   borderRadius: width
+   borderRadius: 40
  }
 
 });

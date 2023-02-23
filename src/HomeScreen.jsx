@@ -1,7 +1,7 @@
-import {View, Text, SafeAreaView, Image, Dimensions, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, SafeAreaView, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
 import React from 'react';
-
+  import {useWindowDimensions} from 'react-native';
 // import Icon from 'react-native-vector-icons/AntDesign';
 
 // import fontawesome from '@fortawesome/fontawesome'
@@ -12,50 +12,51 @@ import React from 'react';
 
 
 
-const {width, height} = Dimensions.get('window');
 
-
-const styles = StyleSheet.create({
-  imageStyle: {
-    position: 'absolute',
-    zIndex: -2,
-    width: width,
-    height: height,
-
-  },
-  SafeAreaStyle: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: 'rgba(255,65,65,0.7)',
-    justifyContent: 'center',
-  },
-  view1: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  text: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'white',
-    marginBottom: 50
-  },
-  view2: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-     alignItems: 'center',
-      borderRadius: width,
-     justifyContent: 'center',
-     paddingVertical: 12,
-     paddingHorizontal: 32,
-     backgroundColor: 'white',
-   }
-})
 
 const LandingScreen = ({navigation}) => {
+
+  const {height, width} = useWindowDimensions();
+
+  const styles = StyleSheet.create({
+    imageStyle: {
+      position: 'absolute',
+      zIndex: -2,
+      width: width,
+      height: height,
+
+    },
+    SafeAreaStyle: {
+      flex: 1,
+      alignItems: 'center',
+      backgroundColor: 'rgba(255,65,65,0.7)',
+      justifyContent: 'center',
+    },
+    view1: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      alignItems: 'center'
+    },
+    text: {
+      fontSize: 30,
+      fontWeight: 'bold',
+      color: 'white',
+      marginBottom: 50
+    },
+    view2: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    button: {
+       alignItems: 'center',
+        borderRadius: 40,
+       justifyContent: 'center',
+       paddingVertical: 12,
+       paddingHorizontal: 32,
+       backgroundColor: 'white',
+     }
+  })
 
 
 
