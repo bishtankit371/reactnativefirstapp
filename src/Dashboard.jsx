@@ -10,9 +10,10 @@ import React, { Component } from 'react';
 
 
 
-const LandingScreen = ({route, navigation}) => {
+const Dashboard = ({navigation}) => {
 
   const {height, width} = useWindowDimensions();
+
 
   const styles = StyleSheet.create({
     imageStyle: {
@@ -25,7 +26,7 @@ const LandingScreen = ({route, navigation}) => {
     SafeAreaStyle: {
       flex: 1,
       alignItems: 'center',
-      backgroundColor: 'rgba(255,65,65,0.7)',
+      backgroundColor: 'rgba(255,100,255,0.8)',
       justifyContent: 'center',
     },
     view1: {
@@ -59,10 +60,6 @@ const LandingScreen = ({route, navigation}) => {
   return (
 
     <>
-      <Image
-        source={require('../asset/bg.jpg')}
-        style={styles.imageStyle}
-      />
 
       <SafeAreaView
         style={styles.SafeAreaStyle}>
@@ -71,12 +68,35 @@ const LandingScreen = ({route, navigation}) => {
 
           <Text
             style={styles.text}>
-            Settings
+            Hello, Ankit! This is Dashboard
           </Text>
         </View>
 
         <View  style={styles.view2}>
 
+    <TouchableOpacity title="LOGOUT" style={styles.button} onPress={() =>
+        navigation.navigate('LOGIN')
+      }>
+
+      <Text
+
+  style={{
+
+    fontSize: 18,
+
+    color: "black",
+
+    marginLeft: 10,
+
+    textAlign: 'center',
+
+  }}>
+
+ LOGOUT
+
+</Text>
+
+      </TouchableOpacity>
 
         </View>
 
@@ -91,4 +111,4 @@ const LandingScreen = ({route, navigation}) => {
 
 
 
-export default LandingScreen;
+export default Dashboard;

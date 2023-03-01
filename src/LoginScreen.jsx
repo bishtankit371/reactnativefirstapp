@@ -1,5 +1,5 @@
-import {View, Text, SafeAreaView,Image, StyleSheet, TouchableOpacity } from 'react-native';
-import React from 'react';
+import {View, Text, SafeAreaView,Image, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import React, { Component, useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Input from '../components/Input';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -9,6 +9,9 @@ import {useWindowDimensions} from 'react-native';
 const LoginScreen = ({navigation}) => {
 
   const {height, width} = useWindowDimensions();
+  const [inputValue, setInputValue] = useState("");
+
+
 
 const styles = StyleSheet.create({
   image: {
@@ -61,7 +64,26 @@ button: {
    paddingVertical: 14,
    paddingHorizontal: 30,
    borderRadius: 40
- }
+ },
+ inputView: {
+     width: width * 0.8,
+     borderRadius: 20
+   },
+  inputText: {
+     fontSize: 18,
+       marginBottom: 4,
+     fontWeight: 'bold',
+     color: 'rgba(255,105,105,1)',
+   },
+   textInputview: {
+     width: width * 0.8,
+     height: height * 0.05,
+     borderBottomColor: 'red',
+     marginBottom: 20,
+     backgroundColor: 'rgba(255,255,255,0)',
+     borderBottomWidth: 2,
+     fontSize: 18
+   }
 
 });
 
@@ -77,12 +99,26 @@ button: {
 
         <View style={styles.view1}>
 
-          <Input
-            label="USERNAME"
-            placeholder="Email"
-            width={width}
-            height={height}
+
+
+
+
+        <View style={styles.inputView}>
+        <Text
+          style={styles.inputText}>
+          Email
+        </Text>
+
+          <TextInput
+          onChangeText={(text)=> setInputValue(text)}
+          style={styles.textInputview}
+          placeholder="Email"
           />
+        </View>
+
+
+
+
 
           <Input
             label="PASSWORD"
@@ -100,7 +136,7 @@ button: {
           </Text>
 
           <TouchableOpacity title="HOME" onPress={() =>
-              navigation.navigate('HOME')
+              navigation.navigate('MYDRAWER', {name: inputValue})
             }>
 
             <Text

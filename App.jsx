@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-
 import HomeScreen from './src/HomeScreen';
+// import Dashboard from './src/Dashboard';
+import MyDrawer from "./src/MyDrawer";
 
 import LoginScreen from './src/LoginScreen';
 import {NavigationContainer} from '@react-navigation/native';
@@ -23,7 +24,7 @@ const App = () => {
           name="LOGIN"
           component={LoginScreen} />
 
-    <Stack.Screen name="HOME" component={HomeScreen} />
+    <Stack.Screen name="MYDRAWER" component={MyDrawer} />
 
    </Stack.Navigator>
    </NavigationContainer>
