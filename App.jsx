@@ -7,6 +7,10 @@ import LoginScreen from './src/LoginScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+import Fruits from "./src/Fruits";
+import { Provider } from "react-redux";
+import store from "./src/redux/store.js";
+
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -15,20 +19,28 @@ const App = () => {
 
 
 
-  return (
+//   return (
+//
+//     <NavigationContainer>
+//     <Stack.Navigator>
+//
+//     <Stack.Screen
+//           name="LOGIN"
+//           component={LoginScreen} />
+//
+//     <Stack.Screen name="MYDRAWER" component={MyDrawer} />
+//
+//    </Stack.Navigator>
+//    </NavigationContainer>
+// );
 
-    <NavigationContainer>
-    <Stack.Navigator>
+return (
 
-    <Stack.Screen
-          name="LOGIN"
-          component={LoginScreen} />
+<Provider store={store}>
+<Fruits />
+</Provider>
 
-    <Stack.Screen name="MYDRAWER" component={MyDrawer} />
-
-   </Stack.Navigator>
-   </NavigationContainer>
-);
+)
 
 };
 
